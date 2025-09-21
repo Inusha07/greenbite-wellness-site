@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenBite-Mindfulness & Meditation</title>
+    <meta name="description" content="Practice mindfulness with guided breathing exercises, meditation timers, and ambient sounds">
+
+    <!--google-font-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--social-icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!--favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon.png">
+    
+    <link rel="stylesheet" href="css/mindfulness.css">
+    <script src="js/mindfulness.js"></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">GreenBite</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+                <li><a href="calculator.html" class="nav-link">Calculator</a></li>
+                <li><a href="workout.html" class="nav-link">Workout</a></li>
+                <li><a href="mindfulness.html" class="nav-link active">Mindfulness</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Mindfulness & Meditation</h1>
+        
+        <div class="mindfulness-container">
+            <!-- Guided Breathing Section -->
+            <div class="mindfulness-section">
+                <h3>Guided Breathing</h3>
+                
+                <!-- Animated breathing circle -->
+                <div class="breathing-animation" id="breathingCircle">
+                    <span id="breathingText">Click to Start</span>
+                </div>
+                
+                <!-- Breathing instruction -->
+                <div class="breathing-instruction" id="breathingInstruction">
+                    Prepare to focus on your breath
+                </div>
+                
+                <!-- Breathing controls -->
+                <div class="timer-controls">
+                    <button class="timer-btn" id="startBreathing">Start Breathing</button>
+                    <button class="timer-btn secondary" id="stopBreathing">Stop</button>
+                </div>
+                
+                <!-- Session tracking -->
+                <div class="sessions-completed">
+                    <div>Breathing sessions completed today:</div>
+                    <span class="session-count" id="breathingSessionCount">0</span>
+                </div>
+            </div>
+
+            <!-- Meditation Timer Section -->
+            <div class="mindfulness-section timer-section">
+                <h3>Meditation Timer</h3>
+                
+                <!-- Large timer display -->
+                <div class="timer-display-large" id="meditationTimer">05:00</div>
+                
+                <!-- Timer preset buttons -->
+                <div class="timer-presets">
+                    <button class="preset-btn active" onclick="setMeditationTime(event,5)">5 min</button>
+                    <button class="preset-btn" onclick="setMeditationTime(event,10)">10 min</button>
+                    <button class="preset-btn" onclick="setMeditationTime(event,15)">15 min</button>
+                    <button class="preset-btn" onclick="setMeditationTime(event,20)">20 min</button>
+                    <button class="preset-btn" onclick="setMeditationTime(event,25)">25 min</button>
+                </div>
+                
+                <!-- Progress circle -->
+                <div class="meditation-progress">
+                    <div class="progress-circle" id="meditationProgress">
+                        <div class="progress-text" id="progressText">Ready</div>
+                    </div>
+                </div>
+                
+                <!-- Timer controls -->
+                <div class="timer-controls">
+                    <button class="timer-btn" id="startMeditation">Start</button>
+                    <button class="timer-btn" id="pauseMeditation">Pause</button>
+                    <button class="timer-btn secondary" id="resetMeditation">Reset</button>
+                </div>
+                
+                <!-- Session tracking -->
+                <div class="sessions-completed">
+                    <div>Meditation sessions completed today:</div>
+                    <span class="session-count" id="meditationSessionCount">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ambient Sounds Section -->
+        <div class="sound-controls">
+            <h3>Ambient Sounds</h3>
+            <p style="text-align: center; margin-bottom: 1.5rem;">
+                Choose calming sounds to enhance your meditation experience
+            </p>
+            
+            <div class="sound-buttons">
+                <button class="sound-btn" data-sound="rain">
+                    <span>Rain</span>
+                </button>
+                <button class="sound-btn" data-sound="forest">
+                    <span>Forest</span>
+                </button>
+                <button class="sound-btn active" data-sound="silence">
+                    <span>Silence</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Completion Messages -->
+        <div class="completion-message" id="breathingComplete">
+            <h3>Breathing Session Complete!</h3>
+            <p>Excellent work! You've completed a mindful breathing session.</p>
+        </div>
+
+        <div class="completion-message" id="meditationComplete">
+            <h3>Meditation Session Complete!</h3>
+            <p>Wonderful! You've successfully completed your meditation practice.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">recipes</a></li>
+                        <li><a href="calculator.html">calculator</a></li>
+                        <li><a href="workout.html">workout</a></li>
+                        <li><a href="mindfulness.html">mindfulness</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Social Links</h3>
+                    <ul class="social-links">
+                        <li><a href="https://facebook.com"><i class="fab fa-facebook"></i>facebook</a></li>
+                        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i>instagram</a></li>
+                        <li><a href="https://youtube.com"><i class="fab fa-youtube"></i>youtube</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get daily health tips</p>
+                    <form id="newsletterForm">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div style="border-top:1px solid #374151; margin-top: 2rem; padding-top: 2rem; text-align: center; color: #9CA3AF;">
+            <p>&copy; 2025 GreenBite.All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

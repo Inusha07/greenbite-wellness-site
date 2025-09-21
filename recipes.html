@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenBite-Healthy Recipes</title>
+    <meta name="description" content="Discover healthy and delicious recipes for breakfast, lunch, dinner, and snacks">
+
+    <!--google-font-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--social-icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!--favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon.png">
+
+    <link rel="stylesheet" href="css/recipes.css">
+    <script src="js/recipes.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">GreenBite</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="recipes.html" class="nav-link active">Recipes</a></li>
+                <li><a href="calculator.html" class="nav-link">Calculator</a></li>
+                <li><a href="workout.html" class="nav-link">Workout</a></li>
+                <li><a href="mindfulness.html" class="nav-link">Mindfulness</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h1 class="page-title">Healthy Recipes</h1>
+        <div class="recipe-controls">
+            <input type="text" class="search-input" id="recipeSearch" placeholder="Search recipes ...">
+            <select class="filter-select" id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+            </select>
+        </div>
+
+        <div class="recipe-grid" id="recipeGrid">
+        </div>
+
+        <div class="no-results hidden" id="noResults">
+            <p>No recipes found matching your criteria. Try adjusting your search or filter.</p>
+        </div>
+    </div>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">recipes</a></li>
+                        <li><a href="calculator.html">calculator</a></li>
+                        <li><a href="workout.html">workout</a></li>
+                        <li><a href="mindfulness.html">mindfulness</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Social Links</h3>
+                    <ul class="social-links">
+                        <li><a href="https://facebook.com"><i class="fab fa-facebook"></i>facebook</a></li>
+                        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i>instagram</a></li>
+                        <li><a href="https://youtube.com"><i class="fab fa-youtube"></i>youtube</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get daily health tips</p>
+                    <form id="newsletterForm">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div style="border-top:1px solid #374151; margin-top: 2rem; padding-top: 2rem; text-align: center; color: #9CA3AF;">
+            <p>&copy; 2025 GreenBite.All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

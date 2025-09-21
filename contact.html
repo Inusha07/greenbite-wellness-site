@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenBite-Contact & Feedback</title>
+    <meta name="description" content="Get in touch with GreenBite - send feedback, ask questions, and find our location">
+
+    <!--google-font-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--social-icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!--favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon.png">
+
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="js/contact.js"></script>
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">GreenBite</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+                <li><a href="calculator.html" class="nav-link">Calculator</a></li>
+                <li><a href="workout.html" class="nav-link">Workout</a></li>
+                <li><a href="mindfulness.html" class="nav-link">Mindfulness</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Contact & Feedback</h1>
+        
+        <!-- Contact Form and Company Info Grid -->
+        <div class="contact-container">
+            <!-- Contact Form Section -->
+            <div class="contact-form">
+                <h3>Send us a message</h3>
+                <form id="contactForm">
+                    <!-- Name Input Field -->
+                    <div class="form-group">
+                        <label class="form-label" for="contactName">Full Name *</label>
+                        <input type="text" class="form-input" id="contactName" required minlength="2" maxlength="100">
+                        <div class="error-message" id="nameError">Please enter a valid name (2-100 characters)</div>
+                    </div>
+                    
+                    <!-- Email Input Field with validation -->
+                    <div class="form-group">
+                        <label class="form-label" for="contactEmail">Email Address *</label>
+                        <input type="email" class="form-input" id="contactEmail" required>
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+                    
+                    <!-- Subject Input Field -->
+                    <div class="form-group">
+                        <label class="form-label" for="contactSubject">Subject</label>
+                        <input type="text" class="form-input" id="contactSubject" maxlength="200" placeholder="What's this about?">
+                    </div>
+                    
+                    <!-- Message Textarea with character count -->
+                    <div class="form-group">
+                        <label class="form-label" for="contactMessage">Message *</label>
+                        <textarea class="form-textarea" id="contactMessage" required minlength="10" maxlength="1000" placeholder="Tell us what's on your mind..."></textarea>
+                        <div class="error-message" id="messageError">Please enter a message (10-1000 characters)</div>
+                        <div style="text-align: right; font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">
+                            <span id="charCount">0</span>/1000 characters
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Send Message
+                    </button>
+                    
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <strong>Message sent successfully!</strong><br>
+                        Thank you for contacting us. We'll get back to you within 24 hours.
+                    </div>
+                </form>
+            </div>
+
+            <!-- Company Information Section -->
+            <div class="company-info">
+                <h3>Our Location </h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6460980165475!2d80.61746657504716!3d7.281047492726185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3673f5e22ab3b%3A0xcbaef11262bec73!2sAPIIT%20Kandy%20Campus!5e0!3m2!1sen!2slk!4v1758389243041!5m2!1sen!2slk" style="border:0; width:100%; height:300px;" allowfullscreen="" loading="lazy"></iframe>
+                
+            </div>
+        </div>
+
+        <!-- Frequently Asked Questions Section -->
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(0)">
+                    <span>What is GreenBite's mission?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>GreenBite is dedicated to promoting healthy living through balanced nutrition, regular exercise, and mindfulness practices. We provide science-based tools and resources to help individuals achieve their wellness goals in a sustainable and enjoyable way.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(1)">
+                    <span>Are the recipes suitable for special dietary needs?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Our recipe collection includes options for various dietary preferences including vegetarian, vegan, gluten-free, and low-carb diets. Each recipe includes detailed nutritional information and dietary tags to help you find meals that fit your specific needs.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(2)">
+                    <span>How accurate is the calorie calculator?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our calculator uses the scientifically validated Mifflin-St Jeor equation for BMR calculation, which is considered one of the most accurate methods available. However, individual metabolism can vary, so results should be used as guidelines alongside professional medical advice.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">recipes</a></li>
+                        <li><a href="calculator.html">calculator</a></li>
+                        <li><a href="workout.html">workout</a></li>
+                        <li><a href="mindfulness.html">mindfulness</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Social Links</h3>
+                    <ul class="social-links">
+                        <li><a href="https://facebook.com"><i class="fab fa-facebook"></i>facebook</a></li>
+                        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i>instagram</a></li>
+                        <li><a href="https://youtube.com"><i class="fab fa-youtube"></i>youtube</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get daily health tips</p>
+                    <form id="newsletterForm">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div style="border-top:1px solid #374151; margin-top: 2rem; padding-top: 2rem; text-align: center; color: #9CA3AF;">
+            <p>&copy; 2025 GreenBite.All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
